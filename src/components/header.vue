@@ -15,7 +15,7 @@
 
     <div id="sideBar" class="nav-list" v-bind:class="{show:show}">
       <div class="user-info" v-if="user.loginname">
-            <a ><i class="fa fa-user-circle-o"></i>{{ user.loginname }}</a>
+            <router-link :to="{ name: 'User', params: { loginname: user.loginname }}"><i class="fa fa-user-circle-o"></i>{{ user.loginname }}</router-link>
             <a v-on:click="logout"><i class="fa fa-undo"></i> 退出 </a>
       </div>
       <div class="user-info" v-else>
