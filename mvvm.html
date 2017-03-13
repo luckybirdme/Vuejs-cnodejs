@@ -161,13 +161,14 @@
 			// 初始化观察者，添加订阅者
 			observer(data, this);
 			var id = options.el;
+			var app  = document.querySelector(id);
 			// 解析文档命令事件和变量
-			var dom = nodeToFragment(document.getElementById(id), this);
+			var dom = nodeToFragment(app, this);
 			// 编译完成后，将 dom 返回到 app 中
-			document.getElementById(id).appendChild(dom); 
+			app.appendChild(dom); 
 		}
 		var vm = new Vue({
-			el: 'app',
+			el: '#app',
 			data: {
 				message: 'hello world'
 			}
